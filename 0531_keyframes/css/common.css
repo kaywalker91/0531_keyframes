@@ -1,0 +1,162 @@
+@charset "uft-8";
+/* 문서에 최상단에 위치하게 할것 */
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* 패딩이나 마진을 키우더라도 박스크기가 커지는 걸 막을 수 있다 */
+}
+
+body
+{
+    color: #333;
+}
+
+a
+{
+    text-decoration: none;
+    color: #333;
+}
+
+table
+{
+    border-collapse: collapse;
+}
+
+/* CSS reset */
+
+@keyframes toSpin
+{
+    0%   
+    {
+        margin-left: 0;
+        background-color: aqua;
+    
+    }
+
+    20%
+    {
+        margin-left: 200px;
+        margin-top: 0px;
+        background-color: blueviolet;
+
+    }
+
+    40%
+    {
+        margin-top: 200px;
+        margin-left: 200px;
+        background-color: rgb(226, 43, 195);
+    }
+
+    80% 
+    {   
+        margin-left: 0;
+        margin-top: 200px;
+        background-color: rgb(195, 223, 41);
+        
+    }
+
+    100%
+    {
+        margin-top: 0;
+        margin-left: 0;
+        background-color: rgb(214, 14, 74);
+
+    }
+}
+
+@keyframes rot
+{
+    0%
+    {
+        transform: rotateY(0deg);
+    }
+
+    100%
+    {
+        transform: rotateY(360deg);
+    }
+
+}
+
+#box1
+{
+    width: 300px;
+    height: 200px;
+    background-color: red;
+    animation: toSpin 4s infinite;
+
+}
+
+#imagebox
+{
+    animation: rot 2s ease-in infinite;
+    bottom: 0;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+#imgbox img
+{
+    height: 100%;
+}
+
+#mouse
+{
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 20px;
+    width: 20px;
+    height: 30px;
+    border-radius: 5px;
+    border: 2px solid white;
+    background-color: rgb(47, 53, 53);
+}
+
+@keyframes wheelbounce
+{
+    0%
+    {
+        margin-top: 3px;
+    }
+
+    100%
+    {
+        margin-top: 6px;
+    }
+
+}
+
+#wheel
+{
+    animation: wheelbounce 0.5s infinite alternate;
+    margin-top: 3px;
+    margin: auto;
+    width: 2px;
+    height: 8px;
+    background-color: white;
+    box-shadow: 0 0 4px rgb(47, 53, 53);
+}
+
+#waterMark
+{
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 3em;
+    font-weight: bold;
+    color: rgb(30, 87, 243);
+    width: 15em;
+}
+
+@media print
+{
+    #waterMark{display: block;}
+}
